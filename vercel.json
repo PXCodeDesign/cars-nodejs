@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/**/*.js": {
+    "carspecs-api/**/*.js": {
       "runtime": "vercel-node@18"
     }
   },
