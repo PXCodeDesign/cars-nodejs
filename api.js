@@ -13,6 +13,10 @@ require("dotenv").config()
 const brandRouter = require("./routes/brand")
 const modelRouter = require("./routes/model")
 
+app.get("/", (req, res) => {
+  res.send("CarSpecs Api")
+})
+
 app.listen(PORT, () => {
   console.log(`server is listening at ${PORT}`)
 })
