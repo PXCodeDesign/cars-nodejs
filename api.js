@@ -16,10 +16,13 @@ const modelRouter = require("./routes/model")
 app.get("/", (req, res) => {
   res.send("CarSpecs Api")
 })
-
-app.listen(PORT, () => {
-  console.log(`server is listening at ${PORT}`)
-})
+try {
+  app.listen(PORT, () => {
+    console.log(`server is listening at ${PORT}`)
+  })
+} catch (e) {
+  console.log(e)
+}
 
 app.use("/brands", brandRouter)
 app.use("/models", modelRouter)
