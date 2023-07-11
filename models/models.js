@@ -1,5 +1,6 @@
-const mongoose = require("mongoose")
-const Schema = mongoose.Schema
+import mongoose from "mongoose"
+
+const { Schema } = mongoose
 
 const ModelSchema = new Schema({
   _brandId: {
@@ -123,4 +124,4 @@ const ModelSchema = new Schema({
 
 const Model = mongoose.model("Model", ModelSchema)
 
-module.exports = Model
+export default Model

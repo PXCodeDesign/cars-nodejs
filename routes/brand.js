@@ -1,7 +1,7 @@
-const express = require("express")
+import express from "express"
 const router = express.Router()
-const Brand = require("../models/brands")
-const { client, ObjectId } = require("./../db")
+import Brand from "../models/brands.js"
+import { client, ObjectId } from "../db.js"
 
 router.post("/", async (req, res) => {
   const data = req.body
@@ -153,4 +153,4 @@ router.delete("/:id", async (req, res) => {
   }
 })
 
-module.exports = router
+export default router

@@ -1,5 +1,5 @@
-const MongoClient = require("mongodb").MongoClient
-const { ObjectId } = require("mongodb")
+import { MongoClient } from "mongodb"
+import { ObjectId } from "mongodb"
 
 const uri =
   "mongodb+srv://techxates:ates2455@cluster0.zhifdh7.mongodb.net/?retryWrites=true&w=majority"
@@ -19,4 +19,4 @@ const connectToMongoDB = async () => {
   }
 }
 
-module.exports = { client, connectToMongoDB, ObjectId }
+export { client, connectToMongoDB, ObjectId }

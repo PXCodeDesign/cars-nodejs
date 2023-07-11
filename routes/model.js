@@ -1,7 +1,7 @@
-const express = require("express")
+import express from "express"
 const router = express.Router()
-const Model = require("../models/models")
-const { client, ObjectId } = require("./../db")
+import Model from "../models/models.js"
+import { client, ObjectId } from "../db.js"
 
 router.post("/", async (req, res) => {
   const data = req.body
@@ -51,7 +51,7 @@ router.get("/", async (req, res) => {
     if (!models) {
       return res.status(404).json({
         status: false,
-        message: "model not found",
+        message: "Model not found",
       })
     }
 
@@ -71,22 +71,22 @@ router.get("/:id", async (req, res) => {
     const id = req.params.id
 
     const database = client.db("carspecs")
-    const collection = database.collection("brands")
+    const collection = database.collection("models")
     const model = await collection.findOne({ _id: new ObjectId(id) })
 
     if (!model) {
       return res.status(404).json({
         status: false,
-        message: "model not found",
+        message: "Model not found",
       })
     }
 
     res.status(200).json(model)
   } catch (error) {
-    console.error("Error occurred while retrieving the brand:", error)
+    console.error("Error occurred while retrieving the model:", error)
     res.status(500).json({
       status: false,
-      message: "Error occurred while retrieving the brand",
+      message: "Error occurred while retrieving the model",
       error: error.message,
     })
   }
@@ -105,7 +105,7 @@ router.put("/:id", async (req, res) => {
     if (!model) {
       res.status(404).json({
         status: false,
-        message: "model not found",
+        message: "Model not found",
       })
     } else {
       await collection.updateOne({ _id: modelId }, { $set: updates })
@@ -115,10 +115,10 @@ router.put("/:id", async (req, res) => {
       })
     }
   } catch (error) {
-    console.error("Error occurred while updating the Model:", error)
+    console.error("Error occurred while updating the model:", error)
     res.status(500).json({
       status: false,
-      message: "Error occurred while updating the Model",
+      message: "Error occurred while updating the model",
       error: error.message,
     })
   }
@@ -144,13 +144,13 @@ router.delete("/:id", async (req, res) => {
       })
     }
   } catch (error) {
-    console.error("Error occurred while deleting the brand:", error)
+    console.error("Error occurred while deleting the model:", error)
     res.status(500).json({
       status: false,
-      message: "Error occurred while deleting the brand",
+      message: "Error occurred while deleting the model",
       error: error.message,
     })
   }
 })
 
-module.exports = router
+export default router
