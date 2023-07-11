@@ -19,3 +19,5 @@ app.listen(PORT, () => {
 
 app.use("/brands", brandRouter)
 app.use("/models", modelRouter)
+
+module.exports = app
