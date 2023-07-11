@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "maxDuration": 30
-  },
   "builds": [
     {
       "src": "api.js",
