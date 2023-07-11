@@ -26,5 +26,3 @@ try {
 
 app.use("/brands", brandRouter)
 app.use("/models", modelRouter)
-
-module.exports = app
