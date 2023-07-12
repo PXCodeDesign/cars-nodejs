@@ -1,15 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "routes/brand.js": {
-      "memory": 3008,
-      "maxDuration": 60
-    },
-    "routes/model.js": {
-      "memory": 1024,
-      "maxDuration": 30
-    }
-  },
   "builds": [
     {
       "src": "api.js",
