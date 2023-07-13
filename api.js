@@ -4,7 +4,6 @@ import helmet from "helmet"
 
 import brandRouter from "./routes/brand.js"
 import modelRouter from "./routes/model.js"
-
 const app = express()
 const PORT = 3000
 
